@@ -1,4 +1,4 @@
-import { fetchNotes } from "@/app/lib/data";
+import { fetchNotes, fetchFilteredNotes } from "@/app/lib/data";
 import { Note } from "./Note";
 
 export default async function Notes({
@@ -8,7 +8,7 @@ export default async function Notes({
   query: string;
   currentPage: number;
 }) {
-  const notes = await fetchNotes();
+  const notes = await fetchFilteredNotes(query, currentPage);
 
   return (
     <>
