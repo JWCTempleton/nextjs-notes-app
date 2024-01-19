@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function NavBar() {
   const pathname = usePathname();
   return (
-    <nav className="p-8 ml-6">
+    <nav className="p-4 ml-2 font-bold text-sm md:text-lg">
       <ul className="flex">
         <li className="mr-6">
           <Link
