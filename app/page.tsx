@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -109,8 +110,28 @@ export default function Home() {
     //     </a>
     //   </div>
     // </main>
-    <main className="flex mx-auto justify-center p-24">
-      <p className="text-2xl">Hello Next</p>
+    <main className="flex flex-col mx-auto p-5 md:pt-10 w-10/12 md:max-w-4xl">
+      <h1 className="text-xl font-bold mb-10 md:text-2xl">Nextjs Note App</h1>
+      <p className="text-md mb-6 md:text-lg">
+        An app for creating and viewing notes made with Next, a postgresql
+        database hosted on vercel, and styled with tailwind.
+      </p>
+      <p className="text-md md:text-lg mb-4">
+        Data for this app is fetched using server components instead of using
+        APIs-- server components query the database directly on the server,
+        sending only the resulting data to the client. Server components support
+        promises so async/await syntax can be used without needing useEffect or
+        useState hooks, simplifying data fetching.
+      </p>
+      <p className="text-md md:text-lg">
+        <Link
+          href={"/signup"}
+          className="font-bold text-sky-600 hover:underline hover:text-sky-400"
+        >
+          Click here
+        </Link>{" "}
+        to sign up
+      </p>
     </main>
   );
 }

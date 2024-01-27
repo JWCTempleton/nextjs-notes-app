@@ -19,20 +19,10 @@ export default async function Page({
   const totalPages = await fetchNotesPages(query);
 
   return (
-    <div className="flex-col justify-center p-8 w-100">
-      <h1 className="text-2xl mb-10">Notes Page</h1>
+    <div className="flex-col justify-center p-8 max-w-4xl mx-auto">
+      <h1 className="text-2xl mb-10 font-bold">Notes Page</h1>
       <Search placeholder="Search notes" />
-      {/* {notes.map((n) => (
-        <Note
-          key={n.note_id}
-          note_id={n.note_id}
-          content={n.content}
-          created_at={n.created_at.toString()}
-          is_important={n.is_important}
-          is_public={n.is_public}
-          name={n.name}
-        />
-      ))} */}
+
       <Suspense
         key={query + currentPage}
         fallback={

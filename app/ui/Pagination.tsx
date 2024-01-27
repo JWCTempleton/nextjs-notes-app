@@ -60,7 +60,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           isDisabled={currentPage <= 1}
         />
 
-        <div className="flex -space-x-px">
+        <div className="flex gap-3 -space-x-px">
           {allPages.map((page, index) => {
             let position: "first" | "last" | "single" | "middle" | undefined;
 
