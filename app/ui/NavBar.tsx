@@ -1,6 +1,7 @@
 import { auth, signOut } from "@/auth";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function NavBar() {
   const session = await auth();
@@ -75,6 +76,7 @@ export default async function NavBar() {
                 action={async () => {
                   "use server";
                   await signOut();
+                  redirect("/notes");
                 }}
               >
                 <li className="mr-6">
