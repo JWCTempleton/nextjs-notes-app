@@ -15,8 +15,6 @@ export default function SignUpForm() {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createUser, initialState);
 
-  console.log("TEST", state);
-
   return (
     <form action={dispatch} className="space-y-3 mt-16">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
@@ -35,7 +33,6 @@ export default function SignUpForm() {
               <input
                 className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500 text-sky-800"
                 id="email"
-                type="email"
                 name="email"
                 placeholder="Enter your email address"
               />
@@ -64,7 +61,6 @@ export default function SignUpForm() {
                 type="username"
                 name="username"
                 placeholder="Enter your username"
-                minLength={3}
               />
               <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500  peer-focus:text-gray-900" />
             </div>
@@ -91,7 +87,6 @@ export default function SignUpForm() {
                 type="password"
                 name="password"
                 placeholder="Enter password"
-                minLength={6}
               />
               <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>

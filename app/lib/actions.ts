@@ -55,7 +55,7 @@ const FormSchema = z.object({
 
 const UserSchema = z.object({
   email: z.string().email({
-    message: "Please enter an email.",
+    message: "Please enter a valid email.",
   }),
   username: z.string().min(3, {
     message: "Usernames must be longer than 3 characters.",
