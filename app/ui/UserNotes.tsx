@@ -10,8 +10,6 @@ export default async function UserNotes({
 }) {
   const filteredUserNotes = await fetchFilteredUserNotes(query, currentPage);
 
-  console.log("NOTES", filteredUserNotes);
-
   return (
     <div className="mx-auto">
       {filteredUserNotes.length === 0 && (

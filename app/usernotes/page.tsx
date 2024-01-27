@@ -1,11 +1,10 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 import UserNotes from "../ui/UserNotes";
 import { fetchUserNotesPages } from "../lib/data";
 import Search from "../ui/Search";
 import NoteSkeleton from "../ui/noteSkeletons";
 import { Suspense } from "react";
 import Pagination from "../ui/Pagination";
+import { CreateNote } from "../ui/buttons";
 
 export default async function Page({
   searchParams,
@@ -46,16 +45,4 @@ export default async function Page({
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-}
-
-export function CreateNote() {
-  return (
-    <Link
-      href="/usernotes/create"
-      className="flex h-10 items-center rounded-lg bg-blue-600 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-    >
-      <span className="hidden md:block">Create Note</span>{" "}
-      <PlusIcon className="h-5 md:ml-4" />
-    </Link>
-  );
 }
